@@ -1,49 +1,52 @@
+// Mobile Menu Toggle logic
+const menuToggle = document.getElementById('menuToggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    
+    // Icon change (Bars to X)
+    const icon = menuToggle.querySelector('i');
+    if (navbar.classList.contains('active')) {
+        icon.classList.replace('fa-bars', 'fa-times');
+    } else {
+        icon.classList.replace('fa-times', 'fa-bars');
+    }
+});
+
+// Menu item click karne par menu close ho jaye
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    });
+});
+
 // Function to open gallery in modal
 function openGallery(images) {
     const modal = document.getElementById("galleryModal");
     const container = document.getElementById("modalImages");
-    
-    // Clear previous images
     container.innerHTML = "";
     
-    // Add images to the container
     images.forEach(src => {
         const img = document.createElement("img");
         img.src = src;
-        img.alt = "Portfolio Project Detail";
+        img.alt = "Project Detail";
         img.loading = "lazy";
         container.appendChild(img);
     });
     
-    // Display the modal
     modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Disable scroll
+    document.body.style.overflow = "hidden";
 }
 
-// Function to close gallery
 function closeGallery() {
-    const modal = document.getElementById("galleryModal");
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Re-enable scroll
+    document.getElementById("galleryModal").style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
-// Close modal when clicking outside the content
 window.onclick = function(event) {
-    const modal = document.getElementById("galleryModal");
-    if (event.target == modal) {
+    if (event.target == document.getElementById("galleryModal")) {
         closeGallery();
     }
 }
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
