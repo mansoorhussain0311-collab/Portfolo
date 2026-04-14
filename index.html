@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansoor Hussain | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">MANSOOR <span> HUSSAIN</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="https://wa.me/971521075666" class="nav-btn">Hire Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">Graphic Designer & Web Developer</span>
+            <h1>Creative Solutions for Your <span>Business</span></h1>
+            <p>I deliver professional brand identities and modern web development solutions to make your projects stand out in the global market.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="main-btn">My Projects</a>
+                <a href="https://www.linkedin.com/in/mansoor-hussain-498464402" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="Images/Mansoor.jpeg" alt="Mansoor Hussain" class="profile-img">
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Who is Mansoor Hussain?</h3>
+                    <p>I am a professional Graphic Designer and Web Developer dedicated to creating exceptional digital experiences. My mission is to transform a client's vision into reality, whether it’s through an impactful brand identity or a high-performance responsive website.</p>
+                    <p>Based in Dubai, I have extensive experience working with international clients through freelancing and professional networking. I specialize in providing unique creative concepts and modern technical solutions that help businesses grow and succeed.</p>
+                    <div class="skills-tags">
+                        <span>Graphic Design</span>
+                        <span>Web Development</span>
+                        <span>UI/UX Design</span>
+                        <span>Brand Identity</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="portfolio" id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <div class="grid">
+            <div class="card" onclick="openGallery(['Images/web 1.png', 'Images/web2.png', 'Images/web 3.png', 'Images/web 4.png'])">
+                <img src="Images/web 1.png" alt="Web">
+                <div class="card-overlay"><h4>Web Development</h4></div>
+            </div>
+            <div class="card" onclick="openGallery(['Images/Web 5.png', 'Images/Web 6.png', 'Images/Web 7.png', 'Images/Web 8.png'])">
+                <img src="Images/Web 5.png" alt="UI">
+                <div class="card-overlay"><h4>Agency Designs</h4></div>
+            </div>
+            <div class="card" onclick="openGallery(['Images/AUTOMOTIVE LOGO.png', 'Images/IT LOGO.png', 'Images/E-COMMERCE LOGO.png'])">
+                <img src="Images/AUTOMOTIVE LOGO.png" alt="Logos">
+                <div class="card-overlay"><h4>Brand Identity</h4></div>
+            </div>
+            <div class="card" onclick="openGallery(['Images/Beauty Salon Flyer.png', 'Images/Mobile Shop Flyer.png', 'Images/Job Hiring Flyer.png'])">
+                <img src="Images/Beauty Salon Flyer.png" alt="Flyers">
+                <div class="card-overlay"><h4>Marketing Graphics</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-info">
+                    <div class="footer-logo">MANSOOR <span> HUSSAIN</span></div>
+                    <p>Creative services tailored for your business needs. Based in Dubai, working globally to bring your ideas to life.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">My Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect with Me</h4>
+                    <p>Feel free to reach out for collaborations or inquiries through my social profiles.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/mansoor-hussain-498464402" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/971521075666" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mansoor Hussain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/971521075666" class="whatsapp-sticky" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <div id="galleryModal" class="modal">
+        <span class="close-modal" onclick="closeGallery()">&times;</span>
+        <div class="modal-content" id="modalImages"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
