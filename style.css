@@ -91,7 +91,7 @@ footer { padding: 80px 8% 30px; background: #111; color: white; }
 .modal-content img { width: 90%; max-width: 1000px; border-radius: 15px; border: 5px solid white; }
 .close-modal { position: fixed; top: 25px; right: 40px; color: white; font-size: 60px; cursor: pointer; }
 
-/* ADJUSTMENTS FOR MOBILE VIEW (MUST USE THIS) */
+/* MOBILE VIEW */
 @media (max-width: 992px) {
     header { padding: 15px 5%; flex-direction: column; gap: 10px; }
     .logo { font-size: 1.3rem; }
