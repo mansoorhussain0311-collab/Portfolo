@@ -1,49 +1,34 @@
-// Function to open gallery in modal
-function openGallery(images) {
+function openGallery(images, price) {
     const modal = document.getElementById("galleryModal");
     const container = document.getElementById("modalImages");
+    const priceBadge = document.getElementById("popupPrice");
     
-    // Clear previous images
+    // Show price in the gallery popup
+    priceBadge.innerText = "Project Price: " + price;
+    
+    // Clear old images
     container.innerHTML = "";
     
-    // Add images to the container
+    // Add new images
     images.forEach(src => {
         const img = document.createElement("img");
         img.src = src;
-        img.alt = "Portfolio Project Detail";
         img.loading = "lazy";
         container.appendChild(img);
     });
     
-    // Display the modal
     modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Disable scroll
+    document.body.style.overflow = "hidden"; // Stop background scrolling
 }
 
-// Function to close gallery
 function closeGallery() {
-    const modal = document.getElementById("galleryModal");
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Re-enable scroll
+    document.getElementById("galleryModal").style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
-// Close modal when clicking outside the content
+// Close if user clicks outside the image
 window.onclick = function(event) {
-    const modal = document.getElementById("galleryModal");
-    if (event.target == modal) {
+    if (event.target == document.getElementById("galleryModal")) {
         closeGallery();
     }
 }
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
